@@ -1,0 +1,17 @@
+name: Sync Codeforces Submissions
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # بيشتغل تلقائيًا كل يوم
+  workflow_dispatch: # بيسمحلك تشغله يدويًا في أي وقت
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync Codeforces Submissions
+        uses: xaden/codeforces-action@v1.3
+        with:
+          max-submissions: 10
+          codeforces-handle: 'Abdullahs99' # ⚠️ استبدل هذه الكلمة باسم حسابك الحقيقي على Codeforces
+          github-token: ${{ secrets.GH_TOKEN }}
