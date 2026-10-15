@@ -9,9 +9,12 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Sync Codeforces Submissions
-        uses: garimasingh128/codeforces-action@v1.0.1
+        uses: beiciy/codeforces-action@v1.1
         with:
           max-submissions: 10
-          codeforces-handle: 'Abdullahs99' #
+          codeforces-handle: 'Abdullahs99' # 
           github-token: ${{ secrets.GH_TOKEN }}
